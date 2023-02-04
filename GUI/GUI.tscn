@@ -57,3 +57,7 @@ nine_patch_stretch = true
 [node name="TweenResource2" type="Tween" parent="."]
 
 [node name="TweenResource3" type="Tween" parent="."]
+
+[connection signal="tween_completed" from="TweenResource1" to="." method="_on_TweenResource1_tween_completed"]
+[connection signal="tween_completed" from="TweenResource2" to="." method="_on_TweenResource2_tween_completed"]
+[connection signal="tween_completed" from="TweenResource3" to="." method="_on_TweenResource3_tween_completed"]
