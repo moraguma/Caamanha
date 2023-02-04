@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://sprites/player.png" type="Texture" id=2]
+[ext_resource path="res://sprites/light.png" type="Texture" id=3]
+[ext_resource path="res://sprites/counterlight.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 19.0
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Torso" type="Sprite" parent="."]
+z_index = 2
+texture = ExtResource( 2 )
+
+[node name="Flashlight" type="Light2D" parent="Torso"]
+texture = ExtResource( 3 )
+mode = 3
+shadow_enabled = true
+
+[node name="CounterFlash" type="Light2D" parent="Torso"]
+light_mask = 2
+texture = ExtResource( 4 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="Legs" type="Sprite" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_mask = 34
+
+[node name="Hitbox" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource( 2 )
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+
+[connection signal="timeout" from="Timer" to="." method="enemy_spawn"]
+[connection signal="area_entered" from="InteractionArea" to="." method="enter_zone"]
+[connection signal="area_exited" from="InteractionArea" to="." method="exit_zone"]
