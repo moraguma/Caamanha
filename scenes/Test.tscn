@@ -263,7 +263,7 @@ shader_param/clip_warp = false
 shader_param/vignette_intensity = 0.4
 shader_param/vignette_opacity = 0.5
 
-[node name="Test" type="Node2D"]
+[node name="Test2" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Viewport" type="Viewport" parent="."]

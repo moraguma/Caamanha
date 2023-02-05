@@ -9,6 +9,9 @@ enum ResourceType {LIQUID, SOLID, GAS}
 export (ResourceType) var resource_type
 
 
+var tutorial = false
+
+
 onready var gui = get_viewport().get_parent().get_node("GUI")
 onready var timer = $Timer
 onready var sprite = $Sprite
@@ -45,6 +48,10 @@ func up_resource():
 
 
 func try_fill(player):
+	if tutorial:
+		get_tree().change_scene("res://scenes/Menu.tscn")
+		return
+	
 	if get_resource_value() < MIN_FILL_VALUE: # Can fill
 		player.deactivate()
 		while get_resource_value() < 100:
