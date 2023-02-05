@@ -1,12 +1,14 @@
 extends KinematicBody2D
 
 
-const SPAWN_DISTANCE = 600
-const DESPAWN_DISTANCE = 750
-const CHASE_BASE_DISTANCE = 64
-const CHASE_MAX_ANGLE = PI/12
+const LIVING_TIME = 16
+const SPAWN_DISTANCE = 400
+const DESPAWN_DISTANCE = 500
+const CHASE_BASE_DISTANCE = 128
+const CHASE_MAX_ANGLE = PI/24
 
 const MAX_MOVE_ANGLE = PI/12
+const START_SPEED = 300
 const SPEED = 70
 const CHASE_SPEED = 100
 const CHASE_DISTANCE = 90
@@ -23,6 +25,7 @@ var time = 0
 
 onready var noise = OpenSimplexNoise.new()
 onready var raycast = $Raycast
+onready var timer = $Timer
 
 
 func _ready():
@@ -38,7 +41,12 @@ func _ready():
 		position = player.position + Vector2(0, -1).rotated(rand_range(-PI, PI)) * SPAWN_DISTANCE
 		dir = ((player.position + player.velocity.normalized() * CHASE_BASE_DISTANCE - position).rotated(rand_range(-CHASE_MAX_ANGLE, CHASE_MAX_ANGLE))).normalized()
 		
-		velocity = dir * SPEED
+		velocity = dir * START_SPEED
+		
+		timer.start(LIVING_TIME)
+		yield(timer, "timeout")
+		if not chase:
+			player.enemy_despawn()
 
 
 func _physics_process(delta):

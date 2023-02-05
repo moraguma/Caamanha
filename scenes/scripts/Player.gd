@@ -4,7 +4,7 @@ extends KinematicBody2D
 const Enemy = preload("res://scenes/Banshee.tscn")
 
 
-const SPEED = 80
+const SPEED = 70
 const ACCEL = 0.1
 const DECCEL = 0.3
 
@@ -43,6 +43,7 @@ func enter_zone(area):
 		pass
 	elif area.get_collision_layer_bit(5): # Cenário
 		safe = true
+		timer.stop()
 		enemy_despawn()
 
 
