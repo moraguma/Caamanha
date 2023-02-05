@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/banshee_move_2.ogg-0d4576dfa73d3649fadf609c5341a06c.oggstr"
+
+[deps]
+
+source_file="res://sfx/banshee_move_2.ogg"
+dest_files=[ "res://.import/banshee_move_2.ogg-0d4576dfa73d3649fadf609c5341a06c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
