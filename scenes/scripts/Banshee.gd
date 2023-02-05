@@ -4,11 +4,11 @@ extends KinematicBody2D
 const LIVING_TIME = 16
 const SPAWN_DISTANCE = 400
 const DESPAWN_DISTANCE = 500
-const CHASE_BASE_DISTANCE = 128
+const CHASE_BASE_DISTANCE = 2
 const CHASE_MAX_ANGLE = PI/24
 
 const MAX_MOVE_ANGLE = PI/12
-const START_SPEED = 300
+const START_SPEED = 400
 const SPEED = 70
 const CHASE_SPEED = 100
 const CHASE_DISTANCE = 90
@@ -33,13 +33,15 @@ func _ready():
 		print("Player not set!")
 		queue_free()
 	else:
+		$AnimationPlayer.play("move")
+		
 		noise.seed = randi()
 		noise.octaves = 4
 		noise.period = 20.0
 		
 		print("Spawned enemy")
 		position = player.position + Vector2(0, -1).rotated(rand_range(-PI, PI)) * SPAWN_DISTANCE
-		dir = ((player.position + player.velocity.normalized() * CHASE_BASE_DISTANCE - position).rotated(rand_range(-CHASE_MAX_ANGLE, CHASE_MAX_ANGLE))).normalized()
+		dir = ((player.position + player.velocity * CHASE_BASE_DISTANCE - position).rotated(rand_range(-CHASE_MAX_ANGLE, CHASE_MAX_ANGLE))).normalized()
 		
 		velocity = dir * START_SPEED
 		

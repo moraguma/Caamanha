@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Nivel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/scripts/Test.gd" type="Script" id=3]
-[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
@@ -255,7 +255,7 @@ shader_param/distort_intensity = 0.005
 shader_param/noise_opacity = 0.05
 shader_param/noise_speed = 5.0
 shader_param/static_noise_intensity = 0.06
-shader_param/aberration = 0.05
+shader_param/aberration = 0.03
 shader_param/brightness = 1.4
 shader_param/discolor = true
 shader_param/warp_amount = 0.3
@@ -274,7 +274,6 @@ color = Color( 0.14902, 0.180392, 0.14902, 1 )
 polygon = PoolVector2Array( -297, -226, 329, -227, 388, 186, -319, 183 )
 
 [node name="Player" parent="Viewport" instance=ExtResource( 1 )]
-position = Vector2( 2536, 0 )
 
 [node name="Nivel" parent="Viewport" instance=ExtResource( 2 )]
 

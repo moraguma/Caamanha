@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/tilemap.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Resource.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Lantern.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tilemap.png 0"
@@ -65,6 +67,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="Hitbox" type="CollisionPolygon2D" parent="Safezone"]
+visible = false
 polygon = PoolVector2Array( 0, 232, -24, 296, -32, 376, -8, 440, 40, 472, 112, 496, 192, 528, 360, 536, 456, 544, 512, 560, 568, 576, 648, 592, 800, 600, 928, 616, 960, 624, 976, 648, 984, 672, 984, 720, 976, 752, 944, 776, 888, 808, 832, 840, 760, 848, 640, 856, 608, 872, 480, 872, 320, 872, 272, 864, 216, 840, 152, 848, 48, 936, 24, 968, 24, 1048, 64, 1152, 88, 1216, 104, 1280, 120, 1336, 120, 1392, 120, 1480, 80, 1544, 40, 1600, 40, 1648, 40, 1776, -24, 1848, -24, 1872, 8, 1920, 144, 1920, 184, 1888, 232, 1872, 448, 1776, 504, 1736, 536, 1728, 632, 1728, 720, 1712, 816, 1696, 896, 1680, 928, 1632, 984, 1632, 1008, 1672, 984, 1728, 952, 1752, 792, 1752, 712, 1768, 568, 1800, 424, 1856, 248, 1960, 72, 2000, -8, 1992, -64, 1928, -96, 1880, -80, 1808, -32, 1736, -32, 1592, -16, 1536, 48, 1456, 48, 1368, 32, 1256, -16, 1128, -48, 1048, -48, 928, 32, 856, 96, 792, 152, 768, 264, 768, 288, 800, 464, 800, 592, 800, 768, 776, 920, 704, 904, 680, 744, 664, 496, 632, 272, 600, 128, 584, -8, 528, -96, 472, -104, 344, -96, 240, -48, 120, -96, 72, -176, 56, -248, 0, -256, -40, -248, -128, -248, -168, -280, -248, -304, -312, -336, -392, -368, -496, -416, -536, -480, -536, -504, -520, -584, -384, -616, -192, -640, 0, -640, 80, -736, 224, -800, 312, -936, 392, -1000, 424, -1120, 448, -1176, 472, -1288, 488, -1312, 472, -1416, 368, -1488, 296, -1720, 296, -1808, 336, -1896, 392, -1968, 408, -2048, 408, -2144, 360, -2192, 312, -2240, 296, -2336, 280, -2528, 264, -2592, 232, -2704, 152, -2816, 16, -2816, -104, -2848, -160, -2848, -312, -2848, -440, -2816, -496, -2720, -608, -2664, -656, -2552, -712, -2464, -712, -2408, -712, -2360, -688, -2288, -688, -2248, -632, -2256, -576, -2296, -552, -2328, -560, -2360, -592, -2408, -648, -2520, -648, -2600, -616, -2696, -536, -2760, -464, -2776, -408, -2776, -240, -2736, 0, -2616, 144, -2464, 208, -2328, 224, -2200, 224, -2104, 304, -2048, 336, -1920, 336, -1728, 224, -1464, 224, -1376, 304, -1304, 392, -1272, 416, -1200, 416, -1120, 368, -928, 320, -784, 176, -696, 48, -696, -72, -696, -176, -656, -264, -656, -416, -600, -512, -544, -576, -496, -608, -376, -608, -328, -560, -280, -480, -264, -408, -224, -320, -200, -240, -184, -152, -184, -64, -136, -8, -80, 0, -24, -64, 40, -64, 112, 8, 288, 64, 416, 64, 448, 8, 416, -96, 312, -280, 272, -360, 264, -472, 264, -600, 280, -672, 192, -752, 144, -840, 128, -912, 128, -1040, 144, -1128, 216, -1168, 376, -1232, 464, -1264, 536, -1296, 632, -1296, 680, -1264, 824, -1256, 1072, -1400, 1192, -1472, 1272, -1496, 1408, -1512, 1520, -1504, 1544, -1504, 1672, -1400, 1720, -1344, 1760, -1280, 1808, -1176, 1832, -1080, 1856, -968, 1896, -832, 1912, -688, 1936, -576, 1952, -464, 1984, -328, 2040, -248, 2072, -200, 2168, -200, 2272, -296, 2328, -384, 2384, -472, 2376, -520, 2402, -572, 2472, -576, 2517, -553, 2536, -504, 2512, -432, 2456, -384, 2400, -304, 2336, -216, 2280, -168, 2224, -128, 2160, -112, 2072, -120, 1992, -160, 1928, -256, 1872, -384, 1848, -448, 1833, -507, 1816, -712, 1808, -792, 1776, -976, 1744, -1104, 1728, -1176, 1688, -1240, 1648, -1336, 1528, -1408, 1432, -1432, 1288, -1408, 1128, -1344, 992, -1256, 880, -1184, 728, -1168, 640, -1192, 576, -1224, 488, -1200, 416, -1160, 328, -1128, 200, -1056, 200, -928, 232, -848, 328, -744, 360, -696, 352, -568, 344, -464, 368, -376, 416, -272, 464, -176, 536, -56, 528, 56, 456, 144, 368, 152, 312, 152, 248, 128, 120, 88, 64, 96, 16, 144 )
 
 [node name="Trees" type="Node2D" parent="."]
@@ -3153,6 +3156,491 @@ position = Vector2( -2072, 744 )
 [node name="Tree664" parent="Trees" instance=ExtResource( 2 )]
 position = Vector2( -1928, 768 )
 
+[node name="Lanterns" type="Node2D" parent="."]
+
+[node name="Sprite" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -128, 0 )
+
+[node name="Sprite50" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 128, 16 )
+
+[node name="Sprite52" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 48, 104 )
+
+[node name="Sprite55" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -96, 232 )
+
+[node name="Sprite56" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -48, 376 )
+
+[node name="Sprite57" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -80, 480 )
+
+[node name="Sprite58" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 48, 480 )
+
+[node name="Sprite59" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 104, 560 )
+
+[node name="Sprite60" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 216, 528 )
+
+[node name="Sprite61" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 296, 616 )
+
+[node name="Sprite62" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 392, 552 )
+
+[node name="Sprite63" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 488, 624 )
+
+[node name="Sprite64" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 568, 584 )
+
+[node name="Sprite65" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 640, 656 )
+
+[node name="Sprite66" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 704, 600 )
+
+[node name="Sprite67" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 792, 664 )
+
+[node name="Sprite68" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 896, 616 )
+
+[node name="Sprite69" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 920, 688 )
+
+[node name="Sprite70" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 976, 728 )
+
+[node name="Sprite71" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 848, 760 )
+
+[node name="Sprite72" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 856, 824 )
+
+[node name="Sprite73" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 728, 784 )
+
+[node name="Sprite74" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 648, 848 )
+
+[node name="Sprite75" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 536, 800 )
+
+[node name="Sprite76" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 496, 864 )
+
+[node name="Sprite77" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 408, 808 )
+
+[node name="Sprite78" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 376, 864 )
+
+[node name="Sprite79" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 288, 800 )
+
+[node name="Sprite80" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 200, 832 )
+
+[node name="Sprite81" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 64, 832 )
+
+[node name="Sprite82" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 56, 944 )
+
+[node name="Sprite83" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -40, 968 )
+
+[node name="Sprite84" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 32, 1048 )
+
+[node name="Sprite85" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -16, 1144 )
+
+[node name="Sprite86" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 88, 1232 )
+
+[node name="Sprite87" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 40, 1304 )
+
+[node name="Sprite88" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 120, 1392 )
+
+[node name="Sprite89" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 48, 1448 )
+
+[node name="Sprite90" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 64, 1552 )
+
+[node name="Sprite91" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -24, 1600 )
+
+[node name="Sprite92" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 32, 1664 )
+
+[node name="Sprite93" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -32, 1736 )
+
+[node name="Sprite94" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 0, 1824 )
+
+[node name="Sprite95" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -64, 1928 )
+
+[node name="Sprite96" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 32, 1928 )
+
+[node name="Sprite97" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 136, 1984 )
+
+[node name="Sprite98" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 184, 1904 )
+
+[node name="Sprite99" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 304, 1928 )
+
+[node name="Sprite100" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 352, 1816 )
+
+[node name="Sprite101" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 512, 1824 )
+
+[node name="Sprite102" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 608, 1728 )
+
+[node name="Sprite103" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 704, 1776 )
+
+[node name="Sprite104" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 800, 1688 )
+
+[node name="Sprite105" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 872, 1752 )
+
+[node name="Sprite106" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 952, 1632 )
+
+[node name="Sprite107" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 976, 1720 )
+
+[node name="Sprite108" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 200, 104 )
+
+[node name="Sprite109" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 280, 64 )
+
+[node name="Sprite110" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 408, 136 )
+
+[node name="Sprite111" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 448, 32 )
+
+[node name="Sprite112" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 520, -64 )
+
+[node name="Sprite113" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 424, -128 )
+
+[node name="Sprite114" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 432, -248 )
+
+[node name="Sprite115" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 336, -288 )
+
+[node name="Sprite116" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 352, -384 )
+
+[node name="Sprite117" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 280, -448 )
+
+[node name="Sprite118" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 352, -576 )
+
+[node name="Sprite119" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 288, -688 )
+
+[node name="Sprite120" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 248, -840 )
+
+[node name="Sprite121" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 152, -912 )
+
+[node name="Sprite122" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 192, -1048 )
+
+[node name="Sprite123" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 232, -1160 )
+
+[node name="Sprite124" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 336, -1136 )
+
+[node name="Sprite125" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 376, -1232 )
+
+[node name="Sprite126" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 512, -1216 )
+
+[node name="Sprite127" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 592, -1288 )
+
+[node name="Sprite128" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 648, -1200 )
+
+[node name="Sprite129" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 728, -1240 )
+
+[node name="Sprite130" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 808, -1184 )
+
+[node name="Sprite131" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 856, -1280 )
+
+[node name="Sprite132" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 976, -1264 )
+
+[node name="Sprite133" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1016, -1344 )
+
+[node name="Sprite134" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1144, -1352 )
+
+[node name="Sprite135" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1176, -1456 )
+
+[node name="Sprite136" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1312, -1432 )
+
+[node name="Sprite137" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1368, -1504 )
+
+[node name="Sprite138" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1464, -1440 )
+
+[node name="Sprite139" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1536, -1504 )
+
+[node name="Sprite140" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1568, -1384 )
+
+[node name="Sprite141" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1696, -1384 )
+
+[node name="Sprite142" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1696, -1264 )
+
+[node name="Sprite143" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1776, -1216 )
+
+[node name="Sprite144" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1744, -1096 )
+
+[node name="Sprite145" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1848, -992 )
+
+[node name="Sprite146" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1784, -944 )
+
+[node name="Sprite147" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1864, -848 )
+
+[node name="Sprite148" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1840, -784 )
+
+[node name="Sprite149" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1888, -688 )
+
+[node name="Sprite150" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1848, -608 )
+
+[node name="Sprite151" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1920, -504 )
+
+[node name="Sprite152" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1880, -424 )
+
+[node name="Sprite153" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1960, -352 )
+
+[node name="Sprite154" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 1944, -248 )
+
+[node name="Sprite155" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2056, -224 )
+
+[node name="Sprite156" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2096, -128 )
+
+[node name="Sprite157" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2184, -200 )
+
+[node name="Sprite158" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2280, -200 )
+
+[node name="Sprite159" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2296, -288 )
+
+[node name="Sprite160" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2408, -328 )
+
+[node name="Sprite161" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2400, -456 )
+
+[node name="Sprite162" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2528, -496 )
+
+[node name="Sprite163" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2416, -552 )
+
+[node name="Sprite164" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( 2496, -568 )
+
+[node name="Sprite2" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -248, -40 )
+
+[node name="Sprite3" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -200, -136 )
+
+[node name="Sprite4" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -264, -248 )
+
+[node name="Sprite5" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -272, -408 )
+
+[node name="Sprite6" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -360, -472 )
+
+[node name="Sprite7" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -408, -544 )
+
+[node name="Sprite8" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -464, -600 )
+
+[node name="Sprite9" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -504, -496 )
+
+[node name="Sprite10" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -624, -456 )
+
+[node name="Sprite11" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -592, -344 )
+
+[node name="Sprite12" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -648, -264 )
+
+[node name="Sprite13" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -632, -144 )
+
+[node name="Sprite14" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -696, -32 )
+
+[node name="Sprite15" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -640, 64 )
+
+[node name="Sprite16" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -768, 168 )
+
+[node name="Sprite17" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -784, 280 )
+
+[node name="Sprite18" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -920, 320 )
+
+[node name="Sprite19" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -992, 416 )
+
+[node name="Sprite20" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1096, 376 )
+
+[node name="Sprite21" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1168, 472 )
+
+[node name="Sprite22" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1304, 400 )
+
+[node name="Sprite23" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1424, 360 )
+
+[node name="Sprite24" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1512, 232 )
+
+[node name="Sprite25" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1600, 288 )
+
+[node name="Sprite26" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1720, 240 )
+
+[node name="Sprite27" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1752, 320 )
+
+[node name="Sprite28" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1832, 296 )
+
+[node name="Sprite29" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1888, 368 )
+
+[node name="Sprite30" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -1968, 344 )
+
+[node name="Sprite31" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2048, 400 )
+
+[node name="Sprite32" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2088, 312 )
+
+[node name="Sprite33" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2184, 312 )
+
+[node name="Sprite34" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2288, 224 )
+
+[node name="Sprite35" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2432, 272 )
+
+[node name="Sprite36" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2536, 184 )
+
+[node name="Sprite37" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2592, 232 )
+
+[node name="Sprite38" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2656, 112 )
+
+[node name="Sprite39" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2744, 112 )
+
+[node name="Sprite40" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2752, -16 )
+
+[node name="Sprite41" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2832, -136 )
+
+[node name="Sprite42" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2784, -272 )
+
+[node name="Sprite43" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2816, -480 )
+
+[node name="Sprite44" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2696, -536 )
+
+[node name="Sprite45" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2632, -672 )
+
+[node name="Sprite46" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2528, -656 )
+
+[node name="Sprite47" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2376, -696 )
+
+[node name="Sprite48" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2336, -560 )
+
+[node name="Sprite49" parent="Lanterns" instance=ExtResource( 4 )]
+position = Vector2( -2248, -640 )
+
 [node name="Barrier" type="StaticBody2D" parent="."]
 material = SubResource( 2 )
 
@@ -3164,3 +3652,14 @@ polygon = PoolVector2Array( -2176, -920, -1856, -1000, -1576, -1000, -1160, -120
 z_index = 10
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -2176, -920, -1856, -1000, -1576, -1000, -1160, -1200, -688, -1216, -400, -1280, -16, -1408, 288, -1648, 432, -1592, 984, -1664, 1200, -1672, 1424, -1736, 1840, -1600, 2048, -1424, 2016, -1184, 2080, -968, 2096, -808, 2216, -712, 2552, -704, 2720, -528, 2624, -224, 2536, 112, 2448, 240, 2512, 352, 2368, 632, 2064, 784, 1984, 1048, 1728, 1224, 1496, 1416, 1176, 1744, 1000, 1872, 688, 2024, 544, 1968, 376, 2080, 104, 2128, -224, 2056, -616, 1904, -880, 1784, -1224, 1512, -1528, 1328, -1864, 1184, -2008, 960, -2216, 712, -2568, 520, -2832, 320, -2944, 136, -3048, -16, -3056, -376, -2888, -680, -2768, -832, -2480, -864, -2136, -928, -1832, -2200, -3408, -1992, -3464, 2480, 24, 2512, 3256, 2632, 3448, -2216, -712, -2056, -2016, -2136 )
+
+[node name="ResourceLiquid" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2464, -504 )
+
+[node name="ResourceSolid" parent="." instance=ExtResource( 3 )]
+position = Vector2( 952, 1680 )
+resource_type = 1
+
+[node name="ResourceGas" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2312, -624 )
+resource_type = 2

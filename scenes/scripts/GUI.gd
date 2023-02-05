@@ -1,7 +1,7 @@
 extends Control
 
 const RESOURCE_INCREMENT=40
-const RESOURCE_DECREASE_RATE=0.5
+const RESOURCE_DECREASE_RATE=0.27
 const FINAL_RESOURCE_INCREMENT=1
 const MAX_FINAL_RESOURCE_VALUE=10
 
@@ -9,10 +9,6 @@ onready var resource1Value=100
 onready var resource2Value=100
 onready var resource3Value=100
 onready var resource4Value=0
-
-onready var pending_increase1=false
-onready var pending_increase2=false
-onready var pending_increase3=false
 
 onready var resource1Bar=$Container/HBoxContainer/HBoxContainer/Resource1Bar
 onready var resource2Bar=$Container/HBoxContainer/HBoxContainer2/Resource2Bar
@@ -40,9 +36,10 @@ func _ready():
 	resource4Bar.max_value=MAX_FINAL_RESOURCE_VALUE
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		print(1)
-		increaseResource1()
+	if Input.is_action_pressed("ui_accept"):
+		$Container/ViewportContainer.visible=true
+	else:
+		$Container/ViewportContainer.visible=false
 	resource1Value-=RESOURCE_DECREASE_RATE*delta
 	resource2Value-=RESOURCE_DECREASE_RATE*delta
 	resource3Value-=RESOURCE_DECREASE_RATE*delta
