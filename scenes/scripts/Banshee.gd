@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+const Sounds = preload("res://scenes/BansheeSounds.tscn")
+
+const SOUND_BASE_TIMER = 6.5
+const SOUND_TIMER_VAR = 2
 
 const LIVING_TIME = 16
 const SPAWN_DISTANCE = 400
@@ -21,6 +25,8 @@ var velocity = Vector2(0, 0)
 var dir = Vector2(0, 0)
 var trees = []
 var time = 0
+var sounds
+var sound_timer
 
 
 onready var noise = OpenSimplexNoise.new()
@@ -33,6 +39,13 @@ func _ready():
 		print("Player not set!")
 		queue_free()
 	else:
+		sounds = Sounds.instance()
+		sound_timer = sounds.get_node("SoundTimer")
+		get_viewport().get_parent().add_child(sounds)
+		sounds.position = Vector2(240, 135) + position - player.position
+		
+		play_sound()
+		sounds.get_node("move_" + str(randi() % 2 + 1)).play()
 		$AnimationPlayer.play("move")
 		
 		noise.seed = randi()
@@ -52,6 +65,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	sounds.position = Vector2(240, 135) + position - player.position
+	
 	time += delta
 	
 	var current_dir
@@ -96,4 +111,11 @@ func see_player(area):
 	raycast.force_raycast_update()
 	if not raycast.is_colliding():
 		print("Chasing")
+		sounds.get_node("chase").play()
 		chase = true
+
+
+func play_sound():
+	sound_timer.start(SOUND_BASE_TIMER + rand_range(-SOUND_TIMER_VAR, SOUND_TIMER_VAR))
+	
+	sounds.get_node("noise_" + str(randi() % 6 + 1)).play()
