@@ -49,6 +49,7 @@ func to_menu():
 func jumpscare():
 	if not tutorial:
 		jumpscare.show()
+		$JumpscareAudio.play()
 		timer.start(JUMPSCARE_TIME)
 		yield(timer, "timeout")
 		to_menu()

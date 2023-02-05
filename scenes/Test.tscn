@@ -15,6 +15,7 @@
 [ext_resource path="res://sfx/alucin_2.wav" type="AudioStream" id=13]
 [ext_resource path="res://sfx/alucin_9.wav" type="AudioStream" id=14]
 [ext_resource path="res://sfx/alucin_4.wav" type="AudioStream" id=15]
+[ext_resource path="res://sfx/sfx_caamanha_jumpscare.wav" type="AudioStream" id=16]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
@@ -310,6 +311,9 @@ margin_right = 480.0
 margin_bottom = 270.0
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="JumpscareAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [node name="Sounds" type="Node2D" parent="."]
 
