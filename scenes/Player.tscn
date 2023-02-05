@@ -4,8 +4,8 @@
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
 [ext_resource path="res://sprites/light.png" type="Texture" id=3]
 [ext_resource path="res://sprites/legs.png" type="Texture" id=4]
-[ext_resource path="res://sfx/dark_ambience_loop.wav" type="AudioStream" id=5]
-[ext_resource path="res://sfx/light_ambience_loop.wav" type="AudioStream" id=6]
+[ext_resource path="res://sfx/dark_ambience_loop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sfx/light_ambience_loop.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
