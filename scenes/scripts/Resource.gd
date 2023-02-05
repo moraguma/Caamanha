@@ -54,6 +54,7 @@ func try_fill(player):
 	
 	if get_resource_value() < MIN_FILL_VALUE: # Can fill
 		player.deactivate()
+		$SpiritAudio.play()
 		while get_resource_value() < 100:
 			timer.start(FILL_TIME)
 			yield(timer, "timeout")

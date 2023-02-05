@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://sprites/texture-button.png" type="Texture" id=2]
+[ext_resource path="res://sfx/botao.wav" type="AudioStream" id=3]
+[ext_resource path="res://sfx/start.wav" type="AudioStream" id=4]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -83,6 +85,14 @@ margin_right = 52.0
 margin_bottom = 16.0
 mouse_filter = 2
 text = "Quit"
+
+[node name="ButtonAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 1.0
+
+[node name="PlayAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 1.0
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Jogar" to="." method="jogar"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Tutorial" to="." method="tutorial"]
