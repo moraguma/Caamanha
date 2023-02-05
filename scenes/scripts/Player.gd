@@ -14,6 +14,7 @@ var enemy = null
 var active = true
 var safe = true
 var velocity = Vector2(0, 0)
+var time = 0
 
 
 onready var torso = $Torso
@@ -93,7 +94,8 @@ func activate():
 
 
 func die():
-	print("died")
+  active = false
+	main.jumpscare()
 	
 func dark_to_light():
 	$Tween.interpolate_property($DarkAmbienceAudio,"volume_db",-3,-20,1)
@@ -122,3 +124,4 @@ func _on_Tween_tween_completed(object, key):
 		
 		
 		
+

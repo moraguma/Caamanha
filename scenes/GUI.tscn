@@ -17,21 +17,21 @@
 [ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=15]
 [ext_resource path="res://resources/kongtext/kongtext.ttf" type="DynamicFontData" id=16]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=8]
 size = 128
 outline_size = 16
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 16 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=9]
 size = 128
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 16 )
 
 [sub_resource type="Theme" id=3]
-default_font = SubResource( 2 )
-RichTextLabel/fonts/normal_font = SubResource( 1 )
+default_font = SubResource( 9 )
+RichTextLabel/fonts/normal_font = SubResource( 8 )
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0

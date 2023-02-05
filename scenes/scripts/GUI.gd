@@ -15,6 +15,7 @@ onready var resource2Bar=$Container/HBoxContainer/HBoxContainer2/Resource2Bar
 onready var resource3Bar=$Container/HBoxContainer/HBoxContainer3/Resource3Bar
 onready var resource4Bar=$Container/FinalResourceBar
 
+var tutorial = false
 
 func increaseResource1():
 	resource1Value+=RESOURCE_INCREMENT
@@ -40,9 +41,11 @@ func _process(delta):
 		$Container/ViewportContainer.visible=true
 	else:
 		$Container/ViewportContainer.visible=false
-	resource1Value-=RESOURCE_DECREASE_RATE*delta
+	if not tutorial:
+		resource1Value-=RESOURCE_DECREASE_RATE*delta
+		resource3Value-=RESOURCE_DECREASE_RATE*delta
+	
 	resource2Value-=RESOURCE_DECREASE_RATE*delta
-	resource3Value-=RESOURCE_DECREASE_RATE*delta
 	resource1Bar.value=resource1Value if resource1Value>=0 else 0
 	resource2Bar.value=resource2Value if resource2Value>=0 else 0
 	resource3Bar.value=resource3Value if resource3Value>=0 else 0
