@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://sprites/texture-button.png" type="Texture" id=2]
-[ext_resource path="res://sfx/botao.wav" type="AudioStream" id=3]
-[ext_resource path="res://sfx/start.wav" type="AudioStream" id=4]
+[ext_resource path="res://sprites/botão2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/tela inicial.png" type="Texture" id=4]
+[ext_resource path="res://sprites/game_name.png" type="Texture" id=5]
+[ext_resource path="res://sfx/botao.wav" type="AudioStream" id=6]
+[ext_resource path="res://sfx/start.wav" type="AudioStream" id=7]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -27,6 +30,7 @@ alignment = 1
 margin_right = 64.0
 margin_bottom = 16.0
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
 
 [node name="Text-Jogar" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/Jogar"]
 anchor_left = 0.5
@@ -45,6 +49,7 @@ margin_top = 20.0
 margin_right = 64.0
 margin_bottom = 36.0
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
 
 [node name="Text-Tutorial" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/Tutorial"]
 anchor_left = 1.0
@@ -63,6 +68,7 @@ margin_top = 40.0
 margin_right = 64.0
 margin_bottom = 56.0
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
 
 [node name="Text-Creditos" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/Creditos"]
 margin_left = 8.0
@@ -77,6 +83,7 @@ margin_top = 60.0
 margin_right = 64.0
 margin_bottom = 76.0
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
 
 [node name="Text-Sair" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/Sair"]
 margin_left = 15.0
@@ -93,6 +100,17 @@ volume_db = 1.0
 [node name="PlayAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = 1.0
+
+[node name="Sprite_title" type="Sprite" parent="CanvasLayer/VBoxContainer"]
+position = Vector2( 20, 33.5 )
+scale = Vector2( 0.333333, 0.32963 )
+texture = ExtResource( 5 )
+
+[node name="Sprite_background" type="Sprite" parent="CanvasLayer/VBoxContainer"]
+position = Vector2( 21, 33.125 )
+scale = Vector2( 0.251563, 0.252083 )
+z_index = -1
+texture = ExtResource( 4 )
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Jogar" to="." method="jogar"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Tutorial" to="." method="tutorial"]
