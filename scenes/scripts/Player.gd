@@ -95,7 +95,7 @@ func activate():
 
 func die():
   active = false
-	main.jumpscare()
+  main.jumpscare()
 	
 func dark_to_light():
 	$Tween.interpolate_property($DarkAmbienceAudio,"volume_db",-3,-20,1)
