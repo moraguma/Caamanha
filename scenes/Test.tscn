@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Nivel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/scripts/Test.gd" type="Script" id=3]
+[ext_resource path="res://sprites/jumpscare.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ViewportTexture" id=1]
@@ -285,7 +286,17 @@ centered = false
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
 
+[node name="Jumpscare" type="Sprite" parent="."]
+visible = false
+light_mask = 0
+z_index = 12
+z_as_relative = false
+texture = ExtResource( 4 )
+centered = false
+
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource( 3 )
 margin_right = 480.0
 margin_bottom = 270.0
+
+[node name="Timer" type="Timer" parent="."]
