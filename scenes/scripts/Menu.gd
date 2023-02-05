@@ -3,14 +3,15 @@ extends Control
 func _ready():
 	pass
 
-func _on_Jogar_pressed():
+func jogar():
 	get_tree().change_scene("res://scenes/Test.tscn") 
 
-func _on_Creditos_pressed():
-	get_tree().change_scene("res://scenes/Credits.tscn")
-	
-func _on_Sair_pressed():
+func tutorial():
+	get_tree().change_scene("res://scenes/TutorialLevel.tscn") 
+
+func credits():
+	get_tree().change_scene("res://scenes/Credits.tscn") 
+
+func quit():
 	get_tree().quit()
 
-func _on_Tutorial_pressed():
-	get_tree().change_scene("res://scenes/TutorialLevel.tscn")

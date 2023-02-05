@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
 [ext_resource path="res://sprites/light.png" type="Texture" id=3]
 [ext_resource path="res://sprites/legs.png" type="Texture" id=4]
+[ext_resource path="res://sfx/dark_ambience_loop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sfx/light_ambience_loop.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -100,6 +102,18 @@ shape = SubResource( 2 )
 current = true
 smoothing_enabled = true
 
+[node name="DarkAmbienceAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -3.0
+
+[node name="LightAmbienceAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -3.0
+autoplay = true
+
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="enemy_spawn"]
 [connection signal="area_entered" from="InteractionArea" to="." method="enter_zone"]
 [connection signal="area_exited" from="InteractionArea" to="." method="exit_zone"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
