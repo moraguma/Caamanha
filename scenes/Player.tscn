@@ -60,6 +60,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_step"
+}, {
+"args": [  ],
+"method": "play_step"
+} ]
+}
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.0
@@ -134,4 +151,6 @@ stream = ExtResource( 10 )
 [connection signal="timeout" from="Timer" to="." method="enemy_spawn"]
 [connection signal="area_entered" from="InteractionArea" to="." method="enter_zone"]
 [connection signal="area_exited" from="InteractionArea" to="." method="exit_zone"]
+[connection signal="finished" from="DarkAmbienceAudio" to="." method="play_dark"]
+[connection signal="finished" from="LightAmbienceAudio" to="." method="play_light"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

@@ -113,7 +113,14 @@ func light_to_dark():
 	$Tween.start()
 	$DarkAmbienceAudio.play()
 	increasing_dark=true
-	
+
+
+func play_light():
+	$LightAmbienceAudio.play()
+
+
+func play_dark():
+	$DarkAmbienceAudio.play()
 
 
 func _on_Tween_tween_completed(object, key):
