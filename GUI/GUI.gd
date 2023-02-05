@@ -14,10 +14,10 @@ onready var pending_increase1=false
 onready var pending_increase2=false
 onready var pending_increase3=false
 
-onready var resource1Bar=$HBoxContainer/HBoxContainer/Resource1Bar
-onready var resource2Bar=$HBoxContainer/HBoxContainer2/Resource2Bar
-onready var resource3Bar=$HBoxContainer/HBoxContainer3/Resource3Bar
-onready var resource4Bar=$FinalResourceBar
+onready var resource1Bar=$Container/HBoxContainer/HBoxContainer/Resource1Bar
+onready var resource2Bar=$Container/HBoxContainer/HBoxContainer2/Resource2Bar
+onready var resource3Bar=$Container/HBoxContainer/HBoxContainer3/Resource3Bar
+onready var resource4Bar=$Container/FinalResourceBar
 
 
 func increaseResource1():

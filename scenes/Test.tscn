@@ -318,9 +318,9 @@ scale = Vector2( 1, -1 )
 texture = SubResource( 1 )
 centered = false
 
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource( 3 )
 margin_right = 480.0
 margin_bottom = 270.0
-
-[node name="GUI" parent="." instance=ExtResource( 5 )]
