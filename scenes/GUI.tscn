@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/scripts/GUI.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Barra-vazia4V2.0.png (3).png" type="Texture" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://sprites/espirito.png" type="Texture" id=14]
 [ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=15]
 [ext_resource path="res://resources/kongtext/kongtext.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://sfx/sfx_mapa_abrir.wav" type="AudioStream" id=17]
+[ext_resource path="res://sfx/sfx_mapa_fechar.wav" type="AudioStream" id=18]
 
 [sub_resource type="DynamicFont" id=8]
 size = 128
@@ -189,3 +191,11 @@ texture = ExtResource( 14 )
 position = Vector2( -192, 232 )
 current = true
 zoom = Vector2( 14, 14 )
+
+[node name="OpenMapAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = 3.0
+
+[node name="CloseMapAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = 3.0
