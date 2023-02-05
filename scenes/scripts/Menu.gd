@@ -13,4 +13,4 @@ func _on_Sair_pressed():
 	get_tree().quit()
 
 func _on_Tutorial_pressed():
-	get_tree().change_scene("res://scenes/Tutorial.tscn")
+	get_tree().change_scene("res://scenes/TutorialLevel.tscn")

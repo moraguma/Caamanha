@@ -1,9 +1,9 @@
 extends Control
 
-const RESOURCE_INCREMENT=40
-const RESOURCE_DECREASE_RATE=0.27
-const FINAL_RESOURCE_INCREMENT=1
-const MAX_FINAL_RESOURCE_VALUE=10
+const RESOURCE_INCREMENT=5
+const RESOURCE_DECREASE_RATE=0.26
+const FINAL_RESOURCE_INCREMENT=0.125
+const MAX_FINAL_RESOURCE_VALUE=5
 
 onready var resource1Value=100
 onready var resource2Value=100
@@ -57,8 +57,8 @@ func _process(delta):
 
 func game_over():
 	print("Voce morreu")
-	get_tree().quit()
+	get_tree().change_scene("res://scenes/Starved.tscn")
 	
 func win():
 	print("Voce venceu")
-	get_tree().quit()
+	get_tree().change_scene("res://scenes/Win.tscn")
