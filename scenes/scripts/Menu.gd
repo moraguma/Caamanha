@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	pass
+	$Music.play()
 
 func jogar():
 	get_tree().change_scene("res://scenes/Test.tscn") 
