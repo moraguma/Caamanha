@@ -94,7 +94,7 @@ func activate():
 
 
 func die():
-  active = false
+	active = false
 	main.jumpscare()
 	
 func dark_to_light():
