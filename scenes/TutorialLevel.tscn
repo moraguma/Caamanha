@@ -4049,8 +4049,8 @@ margin_right = 544.0
 margin_bottom = -376.0
 theme = SubResource( 5 )
 bbcode_enabled = true
-bbcode_text = "[center]Press space to open the map"
-text = "Press space to open the map"
+bbcode_text = "[center]Hold space to open the map"
+text = "Hold space to open the map"
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0

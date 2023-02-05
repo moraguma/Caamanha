@@ -2,7 +2,7 @@ extends Area2D
 
 
 const MIN_FILL_VALUE = 90
-const FILL_TIME = 1
+const FILL_TIME = 0.2
 
 
 enum ResourceType {LIQUID, SOLID, GAS}

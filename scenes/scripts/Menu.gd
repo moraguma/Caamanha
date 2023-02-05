@@ -14,3 +14,4 @@ func credits():
 
 func quit():
 	get_tree().quit()
+
