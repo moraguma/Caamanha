@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/scripts/Credits.gd" type="Script" id=1]
+[ext_resource path="res://sprites/texture-button.png" type="Texture" id=2]
+[ext_resource path="res://sprites/botão2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/comp 1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/fones 1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/art 1.png" type="Texture" id=6]
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -9,31 +14,67 @@ script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Title-Credits" type="RichTextLabel" parent="CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -28.5
-margin_top = -41.0
-margin_right = 28.5
-margin_bottom = 41.0
-text = "Créditos:
-a
-b
-c
-z"
+margin_left = -175.0
+margin_top = -87.0
+margin_right = 186.0
+margin_bottom = -69.0
+text = "                                    Credits:"
 
-[node name="Retornar" type="Button" parent="CanvasLayer"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -170.0
+margin_top = -61.0
+margin_right = 191.0
+margin_bottom = 72.0
+text = "Gustavo Morais (moraguma) - Programmer
+Felipe Pacheco Manoel (MrColorHD) - Programmer
+Carlos (elcassu) - Programmer
+Cristiana Rodrigues (@criispy_e) - Sound design/SFX
+Gustavo Chagas (@chagasgstv) - Sound design/SFX/Music
+Matheus Gravalos (gravalos) - Art
+Larissa Alencar Silva (@cadernonuvem)- Art"
+
+[node name="Retornar" type="TextureButton" parent="CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -28.0
+margin_left = -36.0
 margin_top = -70.0
-margin_right = 38.0
+margin_right = 30.0
 margin_bottom = -50.0
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+
+[node name="retornar_text" type="RichTextLabel" parent="CanvasLayer/Retornar"]
+margin_left = 6.0
+margin_top = 1.0
+margin_right = 67.0
+margin_bottom = 16.0
+mouse_filter = 2
 text = "Retornar"
-clip_text = true
+
+[node name="Fone" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 52, 132 )
+scale = Vector2( 0.90625, 0.90625 )
+texture = ExtResource( 5 )
+
+[node name="Paleta" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 52, 160 )
+scale = Vector2( 0.84375, 0.859375 )
+texture = ExtResource( 6 )
+
+[node name="Computador" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 53, 95 )
+scale = Vector2( 1.15625, 1.09375 )
+texture = ExtResource( 4 )
 
 [connection signal="pressed" from="CanvasLayer/Retornar" to="." method="_on_Retornar_pressed"]
