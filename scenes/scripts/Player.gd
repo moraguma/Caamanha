@@ -14,6 +14,7 @@ var enemy = null
 var active = true
 var safe = true
 var velocity = Vector2(0, 0)
+var time = 0
 
 
 onready var torso = $Torso
@@ -88,4 +89,5 @@ func activate():
 
 
 func die():
-	print("died")
+	active = false
+	main.jumpscare()
