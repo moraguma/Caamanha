@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://sprites/legs.png" type="Texture" id=4]
 [ext_resource path="res://sfx/dark_ambience_loop.ogg" type="AudioStream" id=5]
 [ext_resource path="res://sfx/light_ambience_loop.ogg" type="AudioStream" id=6]
+[ext_resource path="res://sfx/step_2.wav" type="AudioStream" id=7]
+[ext_resource path="res://sfx/step_1.wav" type="AudioStream" id=8]
+[ext_resource path="res://sfx/step_3.wav" type="AudioStream" id=9]
+[ext_resource path="res://sfx/step_4.wav" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -55,6 +59,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_step"
+}, {
+"args": [  ],
+"method": "play_step"
+} ]
 }
 
 [sub_resource type="CircleShape2D" id=1]
@@ -112,6 +133,20 @@ volume_db = -3.0
 autoplay = true
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Step1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[node name="Step2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 7 )
+
+[node name="Step3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 9 )
+
+[node name="Step4" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 10 )
 
 [connection signal="timeout" from="Timer" to="." method="enemy_spawn"]
 [connection signal="area_entered" from="InteractionArea" to="." method="enter_zone"]

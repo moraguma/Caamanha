@@ -1,10 +1,20 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Nivel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/scripts/Test.gd" type="Script" id=3]
 [ext_resource path="res://sprites/jumpscare.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sfx/alucin_10.wav" type="AudioStream" id=6]
+[ext_resource path="res://sfx/alucin_5.wav" type="AudioStream" id=7]
+[ext_resource path="res://sfx/alucin_7.wav" type="AudioStream" id=8]
+[ext_resource path="res://sfx/alucin_1.wav" type="AudioStream" id=9]
+[ext_resource path="res://sfx/alucin_6.wav" type="AudioStream" id=10]
+[ext_resource path="res://sfx/alucin_8.wav" type="AudioStream" id=11]
+[ext_resource path="res://sfx/alucin_3.wav" type="AudioStream" id=12]
+[ext_resource path="res://sfx/alucin_2.wav" type="AudioStream" id=13]
+[ext_resource path="res://sfx/alucin_9.wav" type="AudioStream" id=14]
+[ext_resource path="res://sfx/alucin_4.wav" type="AudioStream" id=15]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
@@ -300,3 +310,40 @@ margin_right = 480.0
 margin_bottom = 270.0
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="SoundTimer" type="Timer" parent="Sounds"]
+one_shot = true
+
+[node name="Alucin1" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 9 )
+
+[node name="Alucin2" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 13 )
+
+[node name="Alucin3" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 12 )
+
+[node name="Alucin4" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 15 )
+
+[node name="Alucin5" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 7 )
+
+[node name="Alucin6" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 10 )
+
+[node name="Alucin7" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[node name="Alucin8" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 11 )
+
+[node name="Alucin9" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 14 )
+
+[node name="Alucin10" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 6 )
+
+[connection signal="timeout" from="Sounds/SoundTimer" to="." method="play_alucination"]

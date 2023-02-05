@@ -97,6 +97,7 @@ func die():
   active = false
   main.jumpscare()
 	
+
 func dark_to_light():
 	$Tween.interpolate_property($DarkAmbienceAudio,"volume_db",-3,-20,1)
 	$Tween.interpolate_property($LightAmbienceAudio,"volume_db",-20,-3,1)
@@ -121,7 +122,8 @@ func _on_Tween_tween_completed(object, key):
 	elif increasing_dark and object==$LightAmbienceAudio:
 		$LightAmbienceAudio.stop()
 		increasing_dark=false
-		
-		
-		
+
+
+func play_step():
+	get_node("Sounds/Step" + str(randi() % 4 + 1)).play()
 
