@@ -15,3 +15,5 @@ func credits():
 func quit():
 	get_tree().quit()
 
+func load_translation(path):
+	TranslationManager.load_translation(path)

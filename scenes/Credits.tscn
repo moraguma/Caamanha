@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/scripts/Credits.gd" type="Script" id=1]
 [ext_resource path="res://sprites/texture-button.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sprites/comp 1.png" type="Texture" id=4]
 [ext_resource path="res://sprites/fones 1.png" type="Texture" id=5]
 [ext_resource path="res://sprites/art 1.png" type="Texture" id=6]
+[ext_resource path="res://scenes/scripts/TranslatableRichTextLabel.gd" type="Script" id=7]
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -24,6 +25,8 @@ margin_top = -87.0
 margin_right = 186.0
 margin_bottom = -69.0
 text = "                                    Credits:"
+script = ExtResource( 7 )
+code = "credits_title"
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer"]
 anchor_left = 0.5
@@ -40,7 +43,10 @@ Carlos (elcassu) - Programmer
 Cristiana Rodrigues (@criispy_e) - Sound design/SFX
 Gustavo Chagas (@chagasgstv) - Sound design/SFX/Music
 Matheus Gravalos (gravalos) - Art
-Larissa Alencar Silva (@cadernonuvem)- Art"
+Larissa Alencar Silva (@cadernonuvem)- Art
+Tomas Lomônaco - Portuguese localization"
+script = ExtResource( 7 )
+code = "credits_text"
 
 [node name="Retornar" type="TextureButton" parent="CanvasLayer"]
 anchor_left = 0.5
@@ -61,6 +67,8 @@ margin_right = 67.0
 margin_bottom = 16.0
 mouse_filter = 2
 text = "Retornar"
+script = ExtResource( 7 )
+code = "back"
 
 [node name="Fone" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 52, 132 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://sprites/texture-button.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sprites/tela inicial.png" type="Texture" id=4]
 [ext_resource path="res://sprites/game_name.png" type="Texture" id=5]
 [ext_resource path="res://sfx/menu.ogg" type="AudioStream" id=6]
+[ext_resource path="res://scenes/scripts/TranslatableRichTextLabel.gd" type="Script" id=7]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -36,12 +37,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -15.0
+margin_left = -29.0
 margin_top = -6.0
-margin_right = 17.0
+margin_right = 30.0
 margin_bottom = 11.0
 mouse_filter = 2
 text = "Play"
+script = ExtResource( 7 )
+code = "play"
 
 [node name="Tutorial" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
 margin_top = 20.0
@@ -55,12 +58,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -55.0
+margin_left = -61.0
 margin_top = -6.0
 margin_right = -4.0
 margin_bottom = 10.0
 mouse_filter = 2
 text = "Tutorial"
+script = ExtResource( 7 )
+code = "tutorial"
 
 [node name="Creditos" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
 margin_top = 40.0
@@ -70,12 +75,14 @@ texture_normal = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
 
 [node name="Text-Creditos" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/Creditos"]
-margin_left = 8.0
+margin_left = 3.0
 margin_top = 1.0
-margin_right = 58.0
+margin_right = 61.0
 margin_bottom = 17.0
 mouse_filter = 2
 text = "Credits"
+script = ExtResource( 7 )
+code = "credits"
 
 [node name="Sair" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
 margin_top = 60.0
@@ -85,12 +92,14 @@ texture_normal = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
 
 [node name="Text-Sair" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/Sair"]
-margin_left = 15.0
+margin_left = 2.0
 margin_top = 1.0
-margin_right = 52.0
+margin_right = 60.0
 margin_bottom = 16.0
 mouse_filter = 2
 text = "Quit"
+script = ExtResource( 7 )
+code = "quit"
 
 [node name="Sprite_title" type="Sprite" parent="CanvasLayer/VBoxContainer"]
 position = Vector2( 20, 33.5 )
@@ -102,6 +111,50 @@ position = Vector2( 21, 33.125 )
 scale = Vector2( 0.251563, 0.252083 )
 z_index = -1
 texture = ExtResource( 4 )
+
+[node name="PT" type="TextureButton" parent="CanvasLayer"]
+margin_left = 404.0
+margin_top = 249.0
+margin_right = 468.0
+margin_bottom = 265.0
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/PT"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.0
+margin_top = -6.0
+margin_right = 17.0
+margin_bottom = 11.0
+mouse_filter = 2
+bbcode_enabled = true
+bbcode_text = "[center]PT"
+text = "PT"
+
+[node name="EN" type="TextureButton" parent="CanvasLayer"]
+margin_left = 404.0
+margin_top = 228.0
+margin_right = 468.0
+margin_bottom = 244.0
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/EN"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.0
+margin_top = -6.0
+margin_right = 17.0
+margin_bottom = 11.0
+mouse_filter = 2
+bbcode_enabled = true
+bbcode_text = "[center]EN"
+text = "EN"
 
 [node name="ButtonAudio" type="AudioStreamPlayer" parent="."]
 volume_db = 1.0
@@ -116,3 +169,5 @@ stream = ExtResource( 6 )
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Tutorial" to="." method="tutorial"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Creditos" to="." method="credits"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Sair" to="." method="quit"]
+[connection signal="pressed" from="CanvasLayer/PT" to="." method="load_translation" binds= [ "res://resources/translations/pt.gd" ]]
+[connection signal="pressed" from="CanvasLayer/EN" to="." method="load_translation" binds= [ "res://resources/translations/en.gd" ]]

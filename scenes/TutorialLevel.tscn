@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/tilemap.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://sfx/alucin_9.wav" type="AudioStream" id=30]
 [ext_resource path="res://sfx/alucin_4.wav" type="AudioStream" id=31]
 [ext_resource path="res://sfx/alucin_2.wav" type="AudioStream" id=32]
+[ext_resource path="res://scenes/scripts/TranslatableRichTextLabel.gd" type="Script" id=33]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tilemap.png 0"
@@ -4013,6 +4014,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]The forest is [shake]starving[shake]"
 text = "The forest is starving"
+script = ExtResource( 33 )
+code = "tutorial1"
 
 [node name="RichTextLabel15" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4028,6 +4031,8 @@ Mouse to look"
 text = "WASD to move
 
 Mouse to look"
+script = ExtResource( 33 )
+code = "tutorial2"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4039,6 +4044,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]You have to feed it"
 text = "You have to feed it"
+script = ExtResource( 33 )
+code = "tutorial3"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4050,6 +4057,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]The bars on top of the screen are the hunger meters"
 text = "The bars on top of the screen are the hunger meters"
+script = ExtResource( 33 )
+code = "tutorial4"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4061,6 +4070,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]Hold space to open the map"
 text = "Hold space to open the map"
+script = ExtResource( 33 )
+code = "tutorial5"
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4072,6 +4083,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center][shake]There's something in the woods"
 text = "There's something in the woods"
+script = ExtResource( 33 )
+code = "tutorial6"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4083,6 +4096,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]Reach the water bottle to give water to the forest"
 text = "Reach the water bottle to give water to the forest"
+script = ExtResource( 33 )
+code = "tutorial7"
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4094,6 +4109,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]The road is long, but safe"
 text = "The road is long, but safe"
+script = ExtResource( 33 )
+code = "tutorial8"
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4105,6 +4122,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]You can go faster through the woods"
 text = "You can go faster through the woods"
+script = ExtResource( 33 )
+code = "tutorial9"
 
 [node name="RichTextLabel14" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4116,6 +4135,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]You'll run out of time if you always take the long road"
 text = "You'll run out of time if you always take the long road"
+script = ExtResource( 33 )
+code = "tutorial10"
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4127,6 +4148,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center][shake]But there's something in the woods"
 text = "But there's something in the woods"
+script = ExtResource( 33 )
+code = "tutorial11"
 
 [node name="RichTextLabel10" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4138,6 +4161,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]You can feed the forest in the points indicated in the map"
 text = "You can feed the forest in the points indicated in the map"
+script = ExtResource( 33 )
+code = "tutorial12"
 
 [node name="RichTextLabel11" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4149,6 +4174,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]There'll be 3 resources to juggle in the main game"
 text = "There'll be 3 resources to juggle in the main game"
+script = ExtResource( 33 )
+code = "tutorial13"
 
 [node name="RichTextLabel12" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4160,6 +4187,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]You'll be taken back to the menu now"
 text = "You'll be taken back to the menu now"
+script = ExtResource( 33 )
+code = "tutorial14"
 
 [node name="RichTextLabel13" type="RichTextLabel" parent="Viewport/Nivel/Tutorial"]
 light_mask = 0
@@ -4171,6 +4200,8 @@ theme = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]Good luck"
 text = "Good luck"
+script = ExtResource( 33 )
+code = "tutorial15"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 270 )

@@ -42,9 +42,11 @@ func _process(delta):
 	else:
 		$Container/ViewportContainer.visible=false
 	if Input.is_action_just_pressed("ui_accept"):
-		$OpenMapAudio.play()
+		pass
+		#$OpenMapAudio.play()
 	if Input.is_action_just_released("ui_accept"):
-		$CloseMapAudio.play()
+		pass
+		#$CloseMapAudio.play()
 	if not tutorial:
 		resource1Value-=RESOURCE_DECREASE_RATE*delta
 		resource3Value-=RESOURCE_DECREASE_RATE*delta
